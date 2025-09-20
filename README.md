@@ -111,27 +111,6 @@ const analyzer = new RoomScheduleAnalyzer(db);
 await analyzer.generateReport();
 ```
 
-## 📈 Exemplo de Saída
-
-```
-🏫 RELATÓRIO DA ESCOLA DO CHAVITO
-==================================================
-📅 20/09/2025 18:30:15
-
-📊 HORAS COMPROMETIDAS POR PROFESSOR:
-----------------------------------------
-Professor Girafales: 25.5h
-Dona Florinda: 18.0h
-Seu Madruga: 12.5h
-
-📅 HORÁRIOS DAS SALAS:
-----------------------------------------
-🏢 Sala 101 (Prédio Principal):
-  Segunda-feira 08:00-10:00: Matemática - Professor Girafales
-  Segunda-feira 14:00-16:00: História - Dona Florinda
-
-
-
 ## 🗂️ Estrutura do Projeto
 
 ```
@@ -150,18 +129,6 @@ horarios-de-aula/
 └── examples/                    # Exemplos de uso
 ```
 
-## 🧪 Testes
-
-```bash
-# Rodar todos os testes
-npm test
-
-# Testes com coverage
-npm run test:coverage
-
-# Testes em modo watch
-npm run test:watch
-```
 
 ## 📚 Scripts Disponíveis
 
@@ -176,7 +143,7 @@ npm run test:watch
 
 
 
-## 📝 Queries SQL Principais
+## 📝 Queries SQL 
 
 ### Horas por Professor
 ```sql
@@ -192,17 +159,26 @@ GROUP BY p.id, p.name
 ORDER BY total_hours DESC;
 ```
 
-### Conflitos de Horário
+### Lista de salas com horarios ocupados
 ```sql
-SELECT r.name, cs1.day_of_week, cs1.start_time, cs1.end_time,
-       s1.name AS subject1, s2.name AS subject2
+ SELECT 
+  r.id AS room_id,
+  r.name AS room_name,
+  b.name AS building_name,
+  cs.day_of_week,
+  cs.start_time,
+  cs.end_time,
+  s.name AS subject_name,
+  s.code AS subject_code,
+  p.name AS professor_name,
+  c.code AS class_code
 FROM Room r
-JOIN ClassSchedule cs1 ON r.id = cs1.room_id
-JOIN ClassSchedule cs2 ON r.id = cs2.room_id 
-WHERE cs1.day_of_week = cs2.day_of_week
-  AND cs1.start_time < cs2.end_time 
-  AND cs1.end_time > cs2.start_time
-  AND cs1.id < cs2.id;
+JOIN Building b ON r.building_id = b.id
+JOIN ClassSchedule cs ON cs.room_id = r.id
+JOIN Class c ON cs.class_id = c.id
+JOIN Subject s ON c.subject_id = s.id
+JOIN Professor p ON s.id = ANY(p.subject_ids)
+ORDER BY r.id, cs.day_of_week, cs.start_time;
 ```
 
 ## 🐛 Problemas Conhecidos
