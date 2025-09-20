@@ -44,7 +44,7 @@ O Professor Girafales se tornou o novo diretor da escola e precisa ter controle 
 
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/horarios-de-aula.git
+git clone https://github.com/wendellfranck/horarios-de-aula.git
 
 # Entre na pasta
 cd horarios-de-aula
@@ -139,10 +139,7 @@ Seu Madruga: 12.5h
   Segunda-feira 08:00-10:00: Matemática - Professor Girafales
   Segunda-feira 14:00-16:00: História - Dona Florinda
 
-⚠️ CONFLITOS DE HORÁRIO:
-----------------------------------------
-✅ Nenhum conflito encontrado!
-```
+
 
 ## 🗂️ Estrutura do Projeto
 
@@ -186,13 +183,7 @@ npm run test:watch
 | `npm test` | Executa os testes |
 | `npm run lint` | Verifica formatação do código |
 
-## 🤝 Como Contribuir
 
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`)
-3. Commit suas mudanças (`git commit -am 'Adiciona nova feature'`)
-4. Push para a branch (`git push origin feature/nova-feature`)
-5. Abra um Pull Request
 
 ## 📝 Queries SQL Principais
 
@@ -241,10 +232,7 @@ Desenvolvido com ❤️ para ajudar o Professor Girafales na gestão da Escola d
 
 ### 📞 Contato
 
-- GitHub: [@seu-usuario](https://github.com/seu-usuario)
-- Email: seu.email@exemplo.com
+- GitHub: [@wendellfranck](https://github.com/wendellfranck)
+- Email: wendellfranck@gmail.com
 
-### 🙏 Agradecimentos
 
-- Professor Girafales pela inspiração
-- Turma do Chaves pelos momentos de diversão durante o desenvolvimento
