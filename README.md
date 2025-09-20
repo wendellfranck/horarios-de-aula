@@ -181,25 +181,5 @@ JOIN Professor p ON s.id = ANY(p.subject_ids)
 ORDER BY r.id, cs.day_of_week, cs.start_time;
 ```
 
-## 🐛 Problemas Conhecidos
-
-- [ ] Relacionamento Professor-Subject precisa ser definido no banco
-- [ ] Campos de tempo podem variar entre PostgreSQL e MySQL
-- [ ] Mock data não reflete estrutura real do banco
-
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
-## 👨‍💻 Autor
-
-Desenvolvido com ❤️ para ajudar o Professor Girafales na gestão da Escola do Chavito.
-
----
-
-### 📞 Contato
-
-- GitHub: [@wendellfranck](https://github.com/wendellfranck)
-- Email: wendellfranck@gmail.com
 
 
