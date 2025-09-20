@@ -15,15 +15,6 @@ O Professor Girafales se tornou o novo diretor da escola e precisa ter controle 
 
 - ⏰ **Quantidade de horas que cada professor tem comprometido em aulas**
 - 📅 **Lista de salas com horários livres e ocupados** 
-- ⚠️ **Detecção automática de conflitos de agendamento**
-
-## 🎯 Funcionalidades
-
-- [x] Cálculo de horas comprometidas por professor
-- [x] Visualização de horários das salas por dia da semana
-- [x] Detecção automática de conflitos de horário
-- [x] Relatórios formatados e fáceis de ler
-- [x] Suporte para diferentes bancos de dados (PostgreSQL, MySQL, SQLite)
 
 ## 🛠️ Tecnologias Utilizadas
 
