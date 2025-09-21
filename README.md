@@ -11,8 +11,6 @@
 
 ## 📋 Sobre o Projeto
 
-O Professor Girafales se tornou o novo diretor da escola e precisa ter controle sobre:
-
 - ⏰ **Quantidade de horas que cada professor tem comprometido em aulas**
 - 📅 **Lista de salas com horários livres e ocupados** 
 
